@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ResolveDayPlanner.Views.ErrandPage"
+             Title="Task Manager"
+             xmlns:local="clr-namespace:ResolveDayPlanner.ViewModels"  
+             xmlns:model="clr-namespace:ResolveDayPlanner.Models" >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add Task" Command="{Binding AddErrandCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Padding="10" x:DataType="model:Errand" >
+            <ListView x:Name="listView" RowHeight="60" VerticalOptions="StartAndExpand" SeparatorVisibility="Default" ItemSelected="OnSelection" ItemTapped="OnTap" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

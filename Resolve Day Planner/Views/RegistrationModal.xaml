@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Shell.PresentationMode="ModalAnimated"
+             x:Class="ResolveDayPlanner.Views.RegistrationModal">
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Margin="50,15" VerticalOptions="Center">
+            <Entry Text="{Binding Username}" Placeholder="Username" />
+            <Entry Text="{Binding Password}" IsPassword="True" Placeholder="Password" />
+            <Entry Text="{Binding NewPassword}" IsPassword="True" Placeholder="Confirm password" />
+
+            <Button Text="Register"
+                    TextColor="White"
+                    BackgroundColor="#2296F3"
+                    Margin="0, 25, 0, 0"
+                    Command="{Binding FinishRegisterCommand}" />
+
+            <!-- 2. Register -->
+            <Label Text="Cancel"
+                   x:Name="CancelBtn"
+                   HorizontalTextAlignment="Center"
+                   TextDecorations="Underline">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding CancelCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

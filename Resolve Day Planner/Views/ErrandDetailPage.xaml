@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ResolveDayPlanner.Views.ErrandDetailPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="Task">
+
+    <StackLayout Spacing="3" Padding="25">
+        <Label Text="Task:" FontSize="18" FontAttributes="Bold" />
+        <Label Text="{Binding ErrandTitle}" FontSize="15"/>
+        <Label Text="Description:" FontSize="18" FontAttributes="Bold" Margin="0, 15, 0, 0" />
+        <Label Text="{Binding Description}" FontSize="15"/>
+        <Label Text="Priority:" FontSize="18" FontAttributes="Bold" Margin="0, 15, 0, 0" />
+        <Label Text="{Binding Priority}" FontSize="15"/>
+        
+        <StackLayout Orientation="Horizontal" Margin="0, 35, 0, 0">
+            <Button Text="Finish" Command="{Binding FinishCommand}" HorizontalOptions="FillAndExpand"></Button>
+            <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+        </StackLayout>
+    </StackLayout>
+    
+
+</ContentPage>
